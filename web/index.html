@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MY SHOP</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+    <!-- <script src="bootstrap/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet/less" type="text/css" href="style.less">
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/less.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/ngstorage/ngStorage.js"></script>
+    <script type="text/javascript" src="angularscript.js"></script>
+
+
+
+</head>
+  <body>
+
+    <ul class="navbar">
+      <div class="wrapper">
+
+      <li class="logo">
+        <img src="img/logo.png" alt="">
+      </li>
+
+      <li class="dropdown">
+        <span id="dropbtn">
+          <a class="active" id="to-hover" href="index.html">HOME</a>
+            <div class="dropdown-content">
+              <a class="not" href="#">HOME</a>
+              <a class="not" href="#">COLLECTION</a>
+              <a class="not" href="#">BLOG</a>
+              <a class="not" href="#">ABOUT US</a>
+              <a class="not" href="#">CONTACT US</a>
+
+            </div>
+        </span>
+      </li>
+
+      <li class="dropdown1">
+        <span id="dropbtn">
+          <a id="to-hover" href="crud.html" class="dropbtn">PRODUCTS</a>
+          <div class="dropdown-content">
+            <table>
+              <tr >
+                <th>DIGITAL SOFTWARE</th>
+                <th>SOFTWARE FOR DESIGNERS</th>
+                <th>UTILITIES</th>
+                <th>DBMS</th>
+              </tr>
+              <tr >
+                <td class="item"><a href="single.html">COREL CORELDRAW</a></td>
+                <td class="item"><a href="single.html">LIGHTWAVE 3D</a></td>
+                <td class="item"><a href="single.html">VEGAS PRO</a></td>
+                <td class="item"><a href="single.html">ADOBE ACROBAT X PRO</a></td>
+              </tr>
+              <tr>
+                <td class="item"><a href="single.html">CORELCAD 2015</a></td>
+                <td class="item"><a href="single.html">MANGA STUDIO</a></td>
+                <td class="item"><a href="single.html">TURBOCAD</a></td>
+                <td class="item"><a href="single.html">ADOBE CREATIVE</a></td>
+              </tr>
+              <tr>
+                <td class="item"><a href="single.html">ADOBE INDESING</a></td>
+                <td class="item"><a href="single.html">NERO 2014</a></td>
+                <td class="item"><a href="single.html">OFFICE 365</a></td>
+                <td class="item"><a href="single.html">ADOBE INDESING</a></td>
+              </tr>
+              <tr>
+                <td class="item"><a href="single.html">ESET CYBERSECURITY</a></td>
+                <td class="item"><a href="single.html">NORTON SECURITY</a></td>
+                <td class="item"><a href="single.html">MANGA STUDIO</a></td>
+                <td class="item"><a href="single.html">ADOBE PHOTOSHOP CS6</a></td>
+              </tr>
+
+            </table>
+          </div>
+        </span>
+      </li>
+
+      <li >
+        <span id="dropbtn">
+          <a id="to-hover" href="account.html"> MY ACCOUNT</a>
+        </span>
+      </li>
+
+      <li id="rightside">
+        <span id="dropbtn">
+          <a id="to-hover" href="#about">ABOUT US</a>
+        </span>
+      </li>
+
+      <li id="rightside">
+        <span id="dropbtn">
+          <span id="to-hover1" >
+          <input type="text" placeholder="SEARCH" name="" value="">
+        </span>
+        </span>
+      </li>
+    </div>
+    </ul>
+
+    <section id="gallery">
+      <a href="#" class="controller left">&larr;</a>
+      <a href="#" class="controller right">&rarr;</a>
+
+      <div class="wrapper">
+        <ul class="items">
+          <li class="item" style="background-image: url('img/slide1_image.jpg'); ">
+            <span class="headers" id="bg">- THE OFFICE -</span>
+            <span class="headers" id="sm">YOUR MAC HAS BEEN WAITING FOR</span>
+            <span class="headers" id="word">SHOP NOW!</span>
+            </li>
+          <li class="item" style="background-image: url('img/slide2_image.jpg');">
+            <span class="headers" id="bg">- THE MANAGER -</span>
+            <span class="headers" id="sm">BE ACTIVE ALL THE TIME WITH NEW TECH</span>
+            <span class="headers" id="word">SHOP NOW!</span>
+          </li>
+          <li class="item" style="background-image: url('img/slide3_image.jpg');">
+            <span class="headers" id="bg">- THE OFFICE -</span>
+            <span class="headers" id="sm">YOUR MAC HAS BEEN WAITING FOR</span>
+            <span class="headers" id="word">SHOP NOW!</span>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+  <div id="first" class="container">
+
+    <div class="row" id="thumb_main">
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail thumb1" id="thumb1">
+          <span class="glyphicon glyphicon-refresh"></span>
+          <p>30 Days return</p>
+        </a>
+      </div>
+      <div class="col-xs-6 col-md-3" >
+        <a href="#" class="thumbnail thumb1" id="thumb2">
+        <span class="glyphicon glyphicon-send"></span>
+        <p>Free Delivery</p>
+        </a>
+      </div>
+
+      <div class="col-xs-6 col-md-3" >
+        <a href="#" class="thumbnail thumb1" id="thumb3">
+          <span class="glyphicon glyphicon-lock"></span>
+          <p>Secure Payment</p>
+        </a>
+      </div>
+
+        <div class="col-xs-6 col-md-3">
+          <a href="#" class="thumbnail thumb1" id="thumb4">
+          <span class="glyphicon glyphicon-wrench"></span>
+          <p>Free Setup</p>
+          </a>
+        </div>
+      </div>
+      <div class="well">
+        <p>Hot Sale</p>
+      </div>
+
+    <div class="row" ng-app="Register" ng-controller="RegisterCtrl" ng-init="get_products()">
+      <div class="col-xs-6 col-md-3" ng-repeat="product in all_products">
+        <div class="hproducts">
+
+          <div class="thumbnail">
+
+          <a href="#" class="">
+            <img id="img" src="img/{{product.image}}" style="width:220px;height:300px;"alt="...">
+          </a>
+          <div class="textbox">
+
+            <span class="btns" ng-click="add_to_cart(product.id)">ADD TO CART</span>
+            <span class="btns">QUICK REVIEW</span>
+            <span class="btns">ADD TO WISHLIST</span>
+
+            </div>
+            <div class="caption">
+              <h4>{{product.name}}</h4>
+              <span>The widest choice of softwar pro...</span>
+              <span>The product code: {{product.code}}</span>
+              <br>
+              <p>Only for <span id="price">{{product.price | currency}}</span></p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="row_top">
+      <div class="container">
+      <div class="footer-top-area">
+        <div class="back"></div>
+        <div class="row">
+          <div class="col-md-3">
+              <div class="footer-about-us">
+                  <a href=""> <h2>SoftWaric<span>Shop</span></h2></a>
+                  <p>This site is developed by Doskhan Doszhanov for purpose of project. It is phone selling site which mean sells only phones.</p>
+
+              </div>
+          </div>
+
+          <div class="col-md-3">
+              <div class="footer-menu a1">
+                  <h2 class="footer-wid-title">User Navigation </h2>
+                  <ul>
+
+                      <li><a href="account.php">My account</a></li>
+                      <li><a href="wishlist.php">Order history</a></li>
+                      <li><a href="wishlist.php">Wishlist</a></li>
+                      <li><a href="#">Vendor contact</a></li>
+                      <li><a href="index.php">Front page</a></li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="col-md-3">
+              <div class="footer-menu">
+                  <h2 class="footer-wid-title">Categories</h2>
+                  <ul>
+                      <li><a href="shop.php">All phones</a></li>
+                      <li><a href="shop.php">Smart Phones</a></li>
+                      <li><a href="shop.php">Phones with buttons</a></li>
+                      <li><a href="shop.php">Phone accessories</a></li>
+                      <li><a href="shop.php">Phone chargers</a></li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="col-md-3">
+              <div class="footer-newsletter">
+                  <h2 class="footer-wid-title">Newsletter</h2>
+                  <p>Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!</p>
+                  <div class="newsletter-form">
+                      <form action="#">
+                          <input class="mail" type="email" placeholder="Type your email">
+                          <input class="knopka" type="submit" value="Subscribe">
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+    </div>
+      <div class="row bottom">
+
+
+        <div class="footer-bottom-area">
+        <div class="container">
+
+              <div class="row">
+                  <div class="col-md-8">
+                      <div class="copyright">
+                          <p>&copy; 2016 Shop . All Rights Reserved.</p>
+                      </div>
+                  </div>
+
+
+              </div>
+        </div>
+      </div> <!-- End footer bottom area -->
+
+    </div>
+  </body>
+  <script type="text/javascript" src="script.js"></script>
+
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Shop</title>
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet/less" type="text/css" href="style.less">
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/less.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/ngstorage/ngStorage.js"></script>
+
+    <script type="text/javascript" src="angularscript.js"></script>
+
+  </head>
+  <body ng-app="Register" ng-controller="RegisterCtrl">
+
+
+
+    <ul class="navbar" ng-init="get_products()">
+
+
+
+      <li class="logo">
+        <img src="img/logo.png" alt="">
+      </li>
+
+        {{$storage.name}}
+        {{$storage.surname}}
+
+      <li class="dropdown">
+        <span id="dropbtn">
+          <a class="active" id="to-hover" href="index.html">HOME</a>
+            <div class="dropdown-content">
+              <a class="not" href="#">HOME</a>
+              <a class="not" href="#">COLLECTION</a>
+              <a class="not" href="#">BLOG</a>
+              <a class="not" href="#">ABOUT US</a>
+              <a class="not" href="#">CONTACT US</a>
+
+            </div>
+        </span>
+      </li>
+
+      <li class="dropdown1">
+        <span id="dropbtn">
+          <a id="to-hover" href="#" class="dropbtn">PRODUCTS</a>
+          <div class="dropdown-content">
+            <table>
+              <tr >
+                <th>DIGITAL SOFTWARE</th>
+                <th>SOFTWARE FOR DESIGNERS</th>
+                <th>UTILITIES</th>
+                <th>DBMS</th>
+              </tr>
+              <tr >
+                <td class="item"><a href="single.html">COREL CORELDRAW</a></td>
+                <td class="item"><a href="single.html">LIGHTWAVE 3D</a></td>
+                <td class="item"><a href="single.html">VEGAS PRO</a></td>
+                <td class="item"><a href="single.html">ADOBE ACROBAT X PRO</a></td>
+              </tr>
+              <tr>
+                <td class="item"><a href="single.html">CORELCAD 2015</a></td>
+                <td class="item"><a href="single.html">MANGA STUDIO</a></td>
+                <td class="item"><a href="single.html">TURBOCAD</a></td>
+                <td class="item"><a href="single.html">ADOBE CREATIVE</a></td>
+              </tr>
+              <tr>
+                <td class="item"><a href="single.html">ADOBE INDESING</a></td>
+                <td class="item"><a href="single.html">NERO 2014</a></td>
+                <td class="item"><a href="single.html">OFFICE 365</a></td>
+                <td class="item"><a href="single.html">ADOBE INDESING</a></td>
+              </tr>
+              <tr>
+                <td class="item"><a href="single.html">ESET CYBERSECURITY</a></td>
+                <td class="item"><a href="single.html">NORTON SECURITY</a></td>
+                <td class="item"><a href="single.html">MANGA STUDIO</a></td>
+                <td class="item"><a href="single.html">ADOBE PHOTOSHOP CS6</a></td>
+              </tr>
+
+            </table>
+          </div>
+        </span>
+      </li>
+
+      <li >
+        <span id="dropbtn">
+          <a id="to-hover" href="account.html"> {{accOrCart}}</a>
+        </span>
+      </li>
+
+      <li id="rightside">
+        <span id="dropbtn">
+          <a id="to-hover" href="#about">ABOUT US</a>
+        </span>
+      </li>
+
+      <li id="rightside">
+        <span id="dropbtn">
+          <a id="to-hover" href="#contact">CONTACT US</a>
+        </span>
+      </li>
+    </ul>
+  <div class="mycart container">
+
+    <div id="line" style="margin-top:130px;" class="well">
+      <p>Shopping Cart</p>
+    </div>
+    <table cellspacing="0" class="shop_table cart">
+        <thead>
+            <tr>
+                <th class="product-thumbnail">View</th>
+                <th class="product-name">Product</th>
+                <th class="product-price">Price</th>
+                <th class="product-subtotal">Code </th>
+                <th class="product-subtotal">Action </th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+              <tr class="cart_item" ng-repeat="product in all_products">
+
+
+                  <td class="product-thumbnail">
+                      <a href="single.html"><img src="img/{{product.image}}" alt=""></a>
+                  </td>
+
+                  <td class="product-name">
+                  <a href="single.html">{{product.name}}</a>
+                  </td>
+
+                  <td class="product-price">
+                      <span class="amount">{{product.price | currency}}</span>
+                  </td>
+
+
+                  <td class="product-subtotal">
+                      <span class="amount">{{product.code}}</span>
+
+                  </td>
+                  <td class="product-subtotal">
+                    <button type="submit" ng-click="delete_product(product.id)" class="btn btn-primary" role="button" name="button">Delete</button>
+                  </td>
+              </tr>
+
+              <tr ng-hide="isHidden">
+                <td class="product-thumbnail">
+                    <input type="text" name="" placeholder="Enter new img path" ng-model="newPImg" value="">
+                </td>
+
+                <td class="product-name">
+                <input type="text" name="" placeholder="Enter new Name" ng-model="newPName" value="">
+                </td>
+
+                <td class="product-price">
+                    <input type="text" name="" placeholder="Enter new Price " ng-model="newPPrice" value="">
+                </td>
+                <td class="product-subtotal">
+                    <input type="text" name="" placeholder="Enter new Code" ng-model="newPCode" value="">
+
+                </td>
+                <td class="product-subtotal">
+                    <button type="button" class="btn btn-danger" ng-click="add()" name="button">Confirm</button>
+
+                </td>
+
+              </tr>
+
+
+    </tbody>
+    </table>
+
+    <div class="row">
+      <div class="col-md-4 col-md-offset-8">
+        <div class="pull-right">
+          <button type="button" class="btn btn-danger" ng-click="isHidden=false" name="button">Add</button>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+<div class="row_top">
+  <div class="container">
+
+
+  <div class="footer-top-area">
+    <div class="back"></div>
+    <div class="row">
+      <div class="col-md-3">
+          <div class="footer-about-us">
+              <a href=""> <h2>I<span>Shop</span></h2></a>
+              <p>This site is developed by Doskhan Doszhanov for purpose of project. It is phone selling site which mean sells only phones.</p>
+
+          </div>
+      </div>
+
+      <div class="col-md-3">
+          <div class="footer-menu a1">
+              <h2 class="footer-wid-title">User Navigation </h2>
+              <ul>
+                  <li><a href="account.php">My account</a></li>
+                  <li><a href="wishlist.php">Order history</a></li>
+                  <li><a href="wishlist.php">Wishlist</a></li>
+                  <li><a href="#">Vendor contact</a></li>
+                  <li><a href="index.php">Front page</a></li>
+              </ul>
+          </div>
+      </div>
+
+      <div class="col-md-3">
+          <div class="footer-menu">
+              <h2 class="footer-wid-title">Categories</h2>
+              <ul>
+                  <li><a href="shop.php">All phones</a></li>
+                  <li><a href="shop.php">Smart Phones</a></li>
+                  <li><a href="shop.php">Phones with buttons</a></li>
+                  <li><a href="shop.php">Phone accessories</a></li>
+                  <li><a href="shop.php">Phone chargers</a></li>
+              </ul>
+          </div>
+      </div>
+
+      <div class="col-md-3">
+          <div class="footer-newsletter">
+              <h2 class="footer-wid-title">Newsletter</h2>
+              <p>Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!</p>
+              <div class="newsletter-form">
+                  <form action="#">
+                      <input class="mail" type="email" placeholder="Type your email">
+                      <input class="knopka" type="submit" value="Subscribe">
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+</div>
+<div class="row bottom">
+
+
+  <div class="footer-bottom-area">
+<div class="container">
+
+          <div class="row">
+              <div class="col-md-8">
+                  <div class="copyright">
+                      <p>&copy; 2016 Shop . All Rights Reserved.</p>
+                  </div>
+              </div>
+
+
+          </div>
+    </div>
+  </div> <!-- End footer bottom area -->
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

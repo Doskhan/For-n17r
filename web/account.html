@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Shop</title>
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet/less" type="text/css" href="style.less">
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/less.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/ngstorage/ngStorage.js"></script>
+
+    <script type="text/javascript" src="angularscript.js"></script>
+
+  </head>
+  <body ng-app="Register" ng-controller="RegisterCtrl">
+
+
+
+    <ul class="navbar">
+
+
+
+      <li class="logo">
+        <img src="img/logo.png" alt="">
+      </li>
+
+        {{$storage.name}}
+        {{$storage.surname}}
+
+      <li class="dropdown">
+        <span id="dropbtn">
+          <a id="to-hover" href="index.html">HOME</a>
+            <div class="dropdown-content">
+              <a class="not" href="#">HOME</a>
+              <a class="not" href="#">COLLECTION</a>
+              <a class="not" href="#">BLOG</a>
+              <a class="not" href="#">ABOUT US</a>
+              <a class="not" href="#">CONTACT US</a>
+
+            </div>
+        </span>
+      </li>
+
+      <li class="dropdown1">
+        <span id="dropbtn">
+          <a id="to-hover" href="crud.html" class="dropbtn">PRODUCTS</a>
+          <div class="dropdown-content">
+            <table>
+              <tr >
+                <th>DIGITAL SOFTWARE</th>
+                <th>SOFTWARE FOR DESIGNERS</th>
+                <th>UTILITIES</th>
+                <th>DBMS</th>
+              </tr>
+              <tr >
+                <td class="item"><a href="single.html">COREL CORELDRAW</a></td>
+                <td class="item"><a href="single.html">LIGHTWAVE 3D</a></td>
+                <td class="item"><a href="single.html">VEGAS PRO</a></td>
+                <td class="item"><a href="single.html">ADOBE ACROBAT X PRO</a></td>
+              </tr>
+              <tr>
+                <td class="item"><a href="single.html">CORELCAD 2015</a></td>
+                <td class="item"><a href="single.html">MANGA STUDIO</a></td>
+                <td class="item"><a href="single.html">TURBOCAD</a></td>
+                <td class="item"><a href="single.html">ADOBE CREATIVE</a></td>
+              </tr>
+              <tr>
+                <td class="item"><a href="single.html">ADOBE INDESING</a></td>
+                <td class="item"><a href="single.html">NERO 2014</a></td>
+                <td class="item"><a href="single.html">OFFICE 365</a></td>
+                <td class="item"><a href="single.html">ADOBE INDESING</a></td>
+              </tr>
+              <tr>
+                <td class="item"><a href="single.html">ESET CYBERSECURITY</a></td>
+                <td class="item"><a href="single.html">NORTON SECURITY</a></td>
+                <td class="item"><a href="single.html">MANGA STUDIO</a></td>
+                <td class="item"><a href="single.html">ADOBE PHOTOSHOP CS6</a></td>
+              </tr>
+
+            </table>
+          </div>
+        </span>
+      </li>
+
+      <li >
+        <span id="dropbtn">
+          <a id="to-hover" class="active" href="cart.html"> {{accOrCart}}</a>
+        </span>
+      </li>
+
+      <li id="rightside">
+        <span id="dropbtn">
+          <a id="to-hover" href="#about">ABOUT US</a>
+        </span>
+      </li>
+
+      <li id="rightside">
+        <span id="dropbtn">
+          <a id="to-hover" href="#contact">CONTACT US</a>
+        </span>
+      </li>
+    </ul>
+  <div class="container">
+
+  <div id="line" class="well">
+    <p>Account</p>
+  </div>
+</div>
+
+<div class="container" >
+  <div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-login">
+
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <form id="login-form" role="form" style="display: block;">
+              <a href="" class="active" id="login-form-link">Login</a>
+              <div class="form-group">
+                <input type="text" name="username" ng-model="username" id="username" class="form-control" placeholder="Email" value="">
+              </div>
+              <div class="form-group">
+                <input type="password" name="password" ng-model="password" id="password" class="form-control" placeholder="Password">
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6 col-sm-offset-3">
+                    <input type="submit" ng-click="login()" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                  </div>
+                </div>
+              </div>
+
+            </form>
+            <div class="line">
+
+            </div>
+            <form id="register-form"  role="form" >
+                <a href="#" id="register-form-link">Register</a>
+              <div class="form-group">
+                <input type="text" name="name" id="username" ng-model="newName" tabindex="1" class="form-control" placeholder="Name" value="">
+              </div>
+              <div class="form-group">
+                <input type="text" name="surname" id="username" ng-model="newSurname" tabindex="1" class="form-control" placeholder="Surname" value="">
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" id="email" ng-model="newEmail" tabindex="1" class="form-control" placeholder="Email Address" value="">
+              </div>
+              <div class="form-group">
+                <input type="password" name="password" ng-model="newPassword" id="password" tabindex="2" class="form-control" placeholder="Password">
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6 col-sm-offset-3">
+                    <input type="submit" name="register-submit" ng-click="register()" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="text" ng-repeat="x in people">
+  <h3>{{x.name}}</h3>
+  <p>{{x.surname}}</p>
+</div>
+</div>
+<br><br><br>
+
+
+
+<div class="row_top">
+  <div class="container">
+
+
+  <div class="footer-top-area">
+    <div class="back"></div>
+    <div class="row">
+      <div class="col-md-3">
+          <div class="footer-about-us">
+              <a href=""> <h2>I<span>Shop</span></h2></a>
+              <p>This site is developed by Doskhan Doszhanov for purpose of project. It is phone selling site which mean sells only phones.</p>
+
+          </div>
+      </div>
+
+      <div class="col-md-3">
+          <div class="footer-menu a1">
+              <h2 class="footer-wid-title">User Navigation </h2>
+              <ul>
+                  <li><a href="account.php">My account</a></li>
+                  <li><a href="wishlist.php">Order history</a></li>
+                  <li><a href="wishlist.php">Wishlist</a></li>
+                  <li><a href="#">Vendor contact</a></li>
+                  <li><a href="index.php">Front page</a></li>
+              </ul>
+          </div>
+      </div>
+
+      <div class="col-md-3">
+          <div class="footer-menu">
+              <h2 class="footer-wid-title">Categories</h2>
+              <ul>
+                  <li><a href="shop.php">All phones</a></li>
+                  <li><a href="shop.php">Smart Phones</a></li>
+                  <li><a href="shop.php">Phones with buttons</a></li>
+                  <li><a href="shop.php">Phone accessories</a></li>
+                  <li><a href="shop.php">Phone chargers</a></li>
+              </ul>
+          </div>
+      </div>
+
+      <div class="col-md-3">
+          <div class="footer-newsletter">
+              <h2 class="footer-wid-title">Newsletter</h2>
+              <p>Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!</p>
+              <div class="newsletter-form">
+                  <form action="#">
+                      <input class="mail" type="email" placeholder="Type your email">
+                      <input class="knopka" type="submit" value="Subscribe">
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+</div>
+<div class="row bottom">
+
+
+  <div class="footer-bottom-area">
+<div class="container">
+
+          <div class="row">
+              <div class="col-md-8">
+                  <div class="copyright">
+                      <p>&copy; 2016 Shop . All Rights Reserved.</p>
+                  </div>
+              </div>
+
+
+          </div>
+    </div>
+  </div> <!-- End footer bottom area -->
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

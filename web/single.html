@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Shop</title>
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet/less" type="text/css" href="style.less">
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/less.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript" src="angularscript.js"></script>
+
+  </head>
+  <body ng-app="Register" ng-controller="RegisterCtrl">
+
+
+
+    <ul class="navbar">
+
+
+
+      <li class="logo">
+        <img src="img/logo.png" alt="">
+      </li>
+
+        {{name}}
+        {{surname}}
+
+      <li class="dropdown">
+        <span id="dropbtn">
+          <a id="to-hover" class="active" href="index.html">HOME</a>
+            <div class="dropdown-content">
+              <a class="not" href="#">HOME</a>
+              <a class="not" href="#">COLLECTION</a>
+              <a class="not" href="#">BLOG</a>
+              <a class="not" href="#">ABOUT US</a>
+              <a class="not" href="#">CONTACT US</a>
+
+            </div>
+        </span>
+      </li>
+
+      <li class="dropdown1">
+        <span id="dropbtn">
+          <a href="cart.html" id="to-hover" class="dropbtn">PRODUCTS</a>
+          <div class="dropdown-content">
+            <table>
+              <tr >
+                <th>DIGITAL SOFTWARE</th>
+                <th>SOFTWARE FOR DESIGNERS</th>
+                <th>UTILITIES</th>
+                <th>DBMS</th>
+              </tr>
+              <tr >
+                <td class="item">COREL CORELDRAW</td>
+                <td class="item">LIGHTWAVE 3D</td>
+                <td class="item">VEGAS PRO</td>
+                <td class="item">ADOBE ACROBAT X PRO</td>
+              </tr>
+              <tr>
+                <td class="item">CORELCAD 2015</td>
+                <td class="item">MANGA STUDIO</td>
+                <td class="item">TURBOCAD</td>
+                <td class="item">ADOBE CREATIVE</td>
+              </tr>
+              <tr>
+                <td class="item">ADOBE INDESING</td>
+                <td class="item">NERO 2014</td>
+                <td class="item">OFFICE 365</td>
+                <td class="item">ADOBE INDESING</td>
+              </tr>
+              <tr>
+                <td class="item">ESET CYBERSECURITY</td>
+                <td class="item">NORTON SECURITY</td>
+                <td class="item">MANGA STUDIO</td>
+                <td class="item">ADOBE PHOTOSHOP CS6</td>
+              </tr>
+
+            </table>
+          </div>
+        </span>
+      </li>
+
+      <li >
+        <span id="dropbtn">
+          <a id="to-hover" href="account.html"> {{accOrCart}}</a>
+        </span>
+      </li>
+
+      <li id="rightside">
+        <span id="dropbtn">
+          <a id="to-hover" href="#about">ABOUT US</a>
+        </span>
+      </li>
+
+      <li id="rightside">
+        <span id="dropbtn">
+          <a id="to-hover" href="#contact">CONTACT US</a>
+        </span>
+      </li>
+    </ul>
+  <div class="container">
+
+  <div id="line" class="well">
+    <p>Single Product</p>
+  </div>
+</div>
+<div class="single container">
+  <div class="col-md-4">
+  <img src="img/vstudio.png" style="width:250px;height:auto" alt="" />
+  <p>
+
+  </p>
+  <img src="img/vstudio2.png" alt="" />
+  <img src="img/vstudio3.png" alt="" />
+
+
+
+    </div>
+    <div class="col-md-5 info">
+    <h3 class="name">COREL VIDEO STUDIO PRO X7</h3>
+    <hr>
+
+  <!-- <a href="#">Otzivtion</a>
+  <a href="#">Otzivtion napisation</a> -->
+
+      <div class="info_small">
+        <p>
+          <b>Product ID: </b> <span id="green"> 9846123</span>
+        </p>
+        <p>
+          <b>Brand: </b> <span id="green"> Corel</span>
+        </p>
+        <p>
+          <b>Short info: </b> Экран 7" (1280 x 800) | Intel Atom x3-C3230 Quad-Core (1,2 ГГц) | ОЗУ 1 ГБ | Флеш-память 16 ГБ | Wi-Fi | Bluetooth | основная камера 8 Мп, фронтальная 2 Мп | An
+        </p>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star-empty" id="empty"></span>
+        <hr>
+        <b>Collections: </b> <span id="green"> Antivirus & Security software, Games, Operating systems, Software for designers and illustrators, Software for programming & web development, Utilities</span>
+      </div>
+
+    </div>
+
+
+    <div class="adding col-md-3">
+      <div class="prices">
+
+      <span id="price">$150.00 </span><span><del> $164.00</del></span>
+      <span id="sale">-8%</span>
+    </div>
+    <p></p>
+    <br>
+      <p>Availibility:<span id="price"> {{total}} item(s)</span></p>
+      <br>
+      <div class="count">
+        Quantity: <span id="price">{{count}}</span>
+        <span class="glyphicon glyphicon-plus" ng-click="pl()"></span>
+        <span class="glyphicon glyphicon-minus" ng-click="mn()"></span>
+      </div>
+      <p></p>
+      <br>
+      <span id="btn">ADD TO CART</span>
+    </div>
+
+    <hr>
+    <div class="media col-md-12">
+
+      <div class="media-body">
+        <h3 class="media-heading">CONVENIENT FORMS OF PAYMENT. </h3>
+        Qualified specialists. Annually our store experts confirm their qualification level with the certification from the vendors, whose products are represented in our store.graphics programs, and any other required licensed software.
+      Our online store is the best place to purchase licensed software, because we offer:
+      </div>
+    </div>
+    <div class="media col-md-12">
+      <div class="media-body">
+        <h3 class="media-heading">BIG EXPERIENCE. </h3>
+        Looking for licensed software for your computer or network?
+    In the catalog of our software online store you can find and buy software for computer security and corporate network (antivirus programs, firewalls, data restore and backup programs, and so on), operating systems (Microsoft Windows, Linux, Macintosh), DBMS, electronic dictionaries and translators, graphics programs, and any other required licensed software.
+      </div>
+    </div>
+      <div class="media col-md-12">
+      <div class="media-body">
+        <h3 class="media-heading">PROMOTIONS AND DISCOUNTS. </h3>
+        If you have not found necessary software product in our store or would like to get an advice, please contact our representative at any convenient time.
+      Have a nice shopping!
+
+
+      </div>
+      </div>
+
+</div>
+<br><br>
+<div class="row_top" style="margin-right:320px;">
+  <div class="container">
+
+
+  <div class="footer-top-area">
+    <div class="back"></div>
+    <div class="row">
+      <div class="col-md-3">
+          <div class="footer-about-us">
+              <a href=""> <h2>I<span>Shop</span></h2></a>
+              <p>This site is developed by Doskhan Doszhanov for purpose of project. It is phone selling site which mean sells only phones.</p>
+
+          </div>
+      </div>
+
+      <div class="col-md-3">
+          <div class="footer-menu a1">
+              <h2 class="footer-wid-title">User Navigation </h2>
+              <ul>
+                  <li><a href="account.php">My account</a></li>
+                  <li><a href="wishlist.php">Order history</a></li>
+                  <li><a href="wishlist.php">Wishlist</a></li>
+                  <li><a href="#">Vendor contact</a></li>
+                  <li><a href="index.php">Front page</a></li>
+              </ul>
+          </div>
+      </div>
+
+      <div class="col-md-3">
+          <div class="footer-menu">
+              <h2 class="footer-wid-title">Categories</h2>
+              <ul>
+                  <li><a href="shop.php">All phones</a></li>
+                  <li><a href="shop.php">Smart Phones</a></li>
+                  <li><a href="shop.php">Phones with buttons</a></li>
+                  <li><a href="shop.php">Phone accessories</a></li>
+                  <li><a href="shop.php">Phone chargers</a></li>
+              </ul>
+          </div>
+      </div>
+
+      <div class="col-md-3">
+          <div class="footer-newsletter">
+              <h2 class="footer-wid-title">Newsletter</h2>
+              <p>Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!</p>
+              <div class="newsletter-form">
+                  <form action="#">
+                      <input class="mail" type="email" placeholder="Type your email">
+                      <input class="knopka" type="submit" value="Subscribe">
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+</div>
+<div class="row bottom">
+
+
+  <div class="footer-bottom-area">
+<div class="container">
+
+          <div class="row">
+              <div class="col-md-8">
+                  <div class="copyright">
+                      <p>&copy; 2016 Shop . All Rights Reserved.</p>
+                  </div>
+              </div>
+
+
+          </div>
+    </div>
+  </div> <!-- End footer bottom area -->
+
+
+
+
+
+
+</div>
+
+
+</body>
+</html>
